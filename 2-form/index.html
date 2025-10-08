@@ -4,17 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>Регистрация</title>
 </head>
 
 <body>
   <main>
-    <section>
-      <h1>Регистрация</h1>
-      <span>Уже есть аккаунт?</span>
-      <a href="">Войти</a>
-    </section>
     <form action="/register">
+      <h1>Регистрация</h1>
+      <span class="haveAccount">Уже есть аккаунт?</span>
+      <a href="" class="haveAccountLink">Войти</a>
       <div>
         <div>
           <input type="text" name="company" required placeholder="Название компании" value="Моя компания" minlength="3"
@@ -29,7 +28,7 @@
         </div>
         <button>Зарегистрироваться</button>
       </div>
-      <label>
+      <label class="confirmTerms">
         <input type="checkbox" name="terms" required>
         Я прочитал и принимаю <a href="">Условия использования</a>
       </label>
