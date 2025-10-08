@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(180deg, #374151 0%, #111827 100%);
   font-family: Roboto, sans-serif;
   color: #FFFFFF;
+  margin: none;
 }
 
 nav a, nav > p {

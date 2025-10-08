@@ -1,6 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #FDC5C5;
 }
+
 main {
   background-color: #FFFEFE;
 }
