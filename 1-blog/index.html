@@ -12,7 +12,8 @@
   <header>
     <!-- Профиль -->
     <nav>
-      <p class="homeButton">Мой блог</ps>
+      <div class="avatar" aria-label="Аватар пользователя В">В</div>
+      <a class="homeButton" href="#">Мой блог</a>
       <!-- Все категории -->
       <div>
         <ul>
@@ -24,21 +25,24 @@
     </nav>
     <!-- Поле для поиска -->
     <search>
-      <p>Поиск</p>
+      <label for="searchInput">
+        <input type="text" name="search" id="searchInput" placeholder="Поиск">
+      </label>
     </search>
   </header>
   <!-- Категория статьи -->
   <section class="blogCategory">
     <span>FRONTEND</span>
-    <p>12 мая 2024</p>
+    <span>&bull;</span>
+    <time datetime="2024-05-12">12 мая 2024</time>
   </section>
   <main>
     <h1>Теория цвета - Как цвет влияет на поведение потребителей</h1>
     <!-- Автор статьи -->
-    <section>
-      <div><img src="./img/author-profile-photo.png" alt="Автор статьи"></div>
+    <section class="articleOwner">
+      <td><img src="./img/author-profile-photo.png" alt="Автор статьи"></td>
       <div>
-        <span class="articleOwner">Наталья Васильева</span>
+        <span class="articleOwnerName">Наталья Васильева</span>
         <span class="articleOwnerRole">Разработчик</span>
       </div>
     </section>
@@ -60,7 +64,7 @@
         влияния
         цветов на поведение пользователей.
       </p>
-      <p>В исследовании «Влияние цвета на маркетинг» (Impact of color on marketing) говорится, что использование разных
+      <p>В исследовании «Влияние цвета на маркетинг» (<span>Impact of color on marketing</span>) говорится, что использование разных
         цветов может существенно влиять на настроение и поведение потребителей. Утверждается, что от 60 до 90%
         покупателей
         (в зависимости от категории продукта) дают положительную или отрицательную оценку товару, основываясь только на

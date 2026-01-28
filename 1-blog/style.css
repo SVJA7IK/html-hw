@@ -4,19 +4,15 @@
   box-sizing: border-box;
 }
 
+header {
+  display: flex;
+}
+
 body {
   background: linear-gradient(180deg, #374151 0%, #111827 100%);
   font-family: Roboto, sans-serif;
   color: #FFFFFF;
   margin: none;
-}
-
-nav a, nav > p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  text-decoration: none;
-  color: #FFFFFF; /* не наследует белый цвет от body */
 }
 
 search > p {
@@ -26,21 +22,158 @@ search > p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.blogCategory {
+nav {
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 52px;
+}
+
+
+nav a, nav > a {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 100%;
-  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  color: #FFFFFF; /* не наследует белый цвет от body */
+}
+
+nav > a {
+  padding: 0px 77px 0px 11px;
+  height: 21px;
 }
 
 h1 {
   font-weight: 400;
   font-size: 24px;
   line-height: 38px;
+  margin-top: 14px;
+  height: 76px;
+}
+
+footer {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer > div {
+  height: 28px;
+  margin-top: 100px;
+}
+
+/*
+ * Стили для компонента поиска с иконкой
+ *
+ * search label:
+ *   - position: relative - устанавливает относительное позиционирование,
+ *     чтобы псевдоэлемент :before мог позиционироваться относительно label
+ *
+ * search label:before:
+ *   - content: "" - создает пустой псевдоэлемент, необходимый для отображения
+ *   - position: absolute - абсолютное позиционирование относительно родителя (label)
+ *   - left: 10px - отступ слева от края label
+ *   - top: 0; bottom: 0 - растягивает элемент по всей высоте родителя
+ *   - width: 20px - фиксированная ширина для иконки
+ *   - background: url(...) - встроенная SVG-иконка лупы в формате data URI
+ *     - center / contain - центрирование и масштабирование иконки
+ *     - no-repeat - предотвращает повторение фона
+ *
+ * search input:
+ *   - padding: 17px 18px - внутренние отступы для поля ввода
+ *     (левый отступ должен учитывать место для иконки)
+ *
+ * Примечание: для корректного отображения иконки слева от текста,
+ * может потребоваться увеличить padding-left у input
+ */
+/* Попытка установить значок поиска (не удалось выровнять расстояния как на макете) */
+search label {
+  position: relative;
+}
+
+search label:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.1" clip-path="url(%23clip0_2_4373)"><path d="M6.41667 11.0833C8.994 11.0833 11.0833 8.994 11.0833 6.41667C11.0833 3.83934 8.994 1.75 6.41667 1.75C3.83934 1.75 1.75 3.83934 1.75 6.41667C1.75 8.994 3.83934 11.0833 6.41667 11.0833Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.25 12.25L9.71249 9.71246" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_2_4373"><rect width="14" height="14" fill="white"/></clipPath></defs></svg>') center / contain no-repeat;
+}
+
+search input {
+  padding: 17px 18px;
+}
+
+#searchInput {
+  height: 40px;
+  background-color: rgba(31, 41, 55, 0.6);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  padding-left: 49px;
+}
+
+#searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #3B82F6;
+  color: #FFFFFF;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background-color: #4B5563;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 18px;
   text-align: center;
+  line-height: 35px;
+  box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.15);
+}
+
+.blogCategory {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 0.6);
+
+  height: 16px;
+  margin-top: 69px;
+  display: flex;
+  gap: 12px;
 }
 
 .articleOwner {
+  display: flex;
+  height: 53px;
+}
+
+.articleOwner td {
+  /* Запрещает flex-элементу уменьшаться в размере, если во flex-контейнере не хватает места */
+  flex-shrink: 0;
+}
+
+.articleOwner img {
+  /* Нужно для равномерного круга аватарки */
+  width: 53px;
+  height: 53px;
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.articleOwnerName {
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
@@ -53,6 +186,13 @@ h1 {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.articleIntroduction img {
+  height: 594px;
+  margin-top: 20px;
+  margin: 28px 0px 69px;
+  border-radius: 5px;
+}
+
 .articleIntroduction {
   font-weight: 400;
   font-size: 20px;
@@ -60,15 +200,18 @@ h1 {
 }
 
 .articleText {
+  margin-top: 28px;
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
 }
 
-footer {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.6);
+.articleText > p:first-of-type {
+  margin-bottom: 28px;
+}
+
+.articleText span {
+  /* Нужно чтобы буквы пересекались подчёркиванием */
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
