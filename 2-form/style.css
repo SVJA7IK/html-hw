@@ -1,3 +1,7 @@
+:root {
+  --gap: 22px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,53 +10,177 @@
 
 body {
   background-color: #FDC5C5;
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
 }
 
 main {
-  background-color: #FFFEFE;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-button {
-  background-color: #089FE0;
-  color: #FFFFFF;
-  font-family: Open Sans, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
+form {
+  display: flex;
+  flex-direction: column;
+
+  /* padding: 72px 93px 91px 93px; */
+  width: 100%;
+  max-width: 580px;
+  padding: clamp(24px, 6vw, 72px) clamp(20px, 8vw, 93px);
+
+  gap: var(--gap);
+  background-color: #FFFEFE;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
 h1 {
-  font-family: Open Sans, sans-serif;
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
-  line-height: 100%;
-  letter-spacing: 0%;
 }
 
-.haveAccount, .haveAccountLink {
-  font-family: Open Sans, sans-serif;
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  background-color: #089FE0;
+  color: #FFFFFF;
   font-weight: 400;
   font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
-}
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+  padding: 9px 102px;
 
-.confirmTerms {
-  font-family: Open Sans, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  transition: background-color 0.3s ease;
 }
 
 input {
-  background-color: #F5F5F5;
+  flex: 1;
   font-style: italic;
-  font-family: Open Sans, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0%;
+
+  border-style: none;
+  background-color: hsla(0, 0%, 96%, 1);
+  border: 2px solid hsla(0, 0%, 96%, 1);
+  color: #333333;
+
+  border-radius: 5px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 11px;
+  caret-color: #089FE0;
+
+  transition: background-color 1s ease;
+}
+
+.form__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.have-container {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.button-row {
+  display: flex;
+  gap: 1px;
+}
+
+.button-row > label {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.button-row input {
+  width: 100%;
+}
+
+.have-account, .have-account-link {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.have-account-link {
+  color: #089FE0;
+}
+
+.confirm-terms {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.confirm-terms a {
+  color: #089FE0;
+  text-decoration-line: none;
+  margin-left: 6px;
+}
+
+input[name="company"] {
+  font-style: normal;
+  font-weight: bold;
+}
+
+input[type="email"], input[name="company"] {
+  width: 100%;
+}
+
+input::placeholder {
+  color: #999999;
+}
+
+input:focus {
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+input:focus-visible, a:focus-visible {
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+input:user-invalid::placeholder {
+  color: rgb(250, 132, 132);
+}
+
+input:user-invalid {
+  border-color: rgb(250, 132, 132);
+}
+
+button:hover {
+  background-color: #0887be;
+}
+
+.icon-arrow-right {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* делает белый цвет иконки */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
