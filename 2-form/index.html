@@ -1,38 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>Регистрация</title>
 </head>
 
 <body>
   <main>
-    <section>
-      <h1>Регистрация</h1>
-      <span>Уже есть аккаунт?</span>
-      <a href="">Войти</a>
-    </section>
     <form action="/register">
-      <div>
-        <div>
-          <input type="text" name="company" required placeholder="Название компании" value="Моя компания" minlength="3"
-            maxlength="25">
+      <header class="form__header">
+        <h1>Регистрация</h1>
+        <div class="have-container">
+          <span class="have-account">Уже есть аккаунт?</span>
+          <a href="#" class="have-account-link">Войти</a>
         </div>
-        <div>
-          <input type="text" name="name" required placeholder="Имя" minlength="3" maxlength="25">
-          <input type="text" name="surname" required placeholder="Фамилия" minlength="3" maxlength="25">
-        </div>
-        <div>
-          <input type="email" name="email" required placeholder="E-mail">
-        </div>
-        <button>Зарегистрироваться</button>
-      </div>
+      </header>
+
       <label>
-        <input type="checkbox" name="terms" required>
-        Я прочитал и принимаю <a href="">Условия использования</a>
+        <span class="visually-hidden">Название компании</span>
+        <input type="text" name="company" required placeholder="Название компании" value="Моя компания" minlength="3"
+          maxlength="25">
       </label>
+
+      <div class="button-row">
+        <label>
+          <span class="visually-hidden">Имя пользователя</span>
+          <input type="text" name="name" required placeholder="Имя" minlength="3" maxlength="25">
+        </label>
+        <label>
+          <span class="visually-hidden">Фамилия пользователя</span>
+          <input type="text" name="surname" required placeholder="Фамилия" minlength="3" maxlength="25">
+        </label>
+      </div>
+
+      <label>
+        <span class="visually-hidden">Электронный адрес</span>
+        <input type="email" name="email" required placeholder="E-mail">
+      </label>
+      <footer>
+        <button type="submit">Зарегистрироваться
+          <img src="./img/tabler--arrow-narrow-right.svg" alt="" class="icon-arrow-right" aria-hidden="true">
+        </button>
+        <label class="confirm-terms">
+          <input type="checkbox" name="terms" required>
+          Я прочитал и принимаю <a href="#" class="terms">Условия использования</a>
+        </label>
+      </footer>
+
     </form>
   </main>
 </body>
