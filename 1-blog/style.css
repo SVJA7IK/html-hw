@@ -1,0 +1,347 @@
+:root {
+  --color-text: #FFFFFF;
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --font-main: Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  padding: 0px 180px;
+  padding-top: 71px;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(180deg, #374151 0%, #111827 100%);
+  color: var(--color-text);
+  margin: 0px;
+}
+
+@media (max-width: 1200px) {
+  header,
+  main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+search {
+  padding-left: 52px;
+}
+
+search > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--color-text-muted);
+}
+
+nav {
+  display: flex;
+  align-items: baseline;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 52px;
+}
+
+
+nav a, nav > a {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-decoration: none;
+  color: var(--color-text); /* не наследует белый цвет от body */
+}
+
+nav > a {
+  padding: 0px 77px 0px 11px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 38px;
+  margin: 14px auto 0;
+
+  /* display: block; */
+  max-width: 525px;
+  /* height: 76px; */
+}
+
+footer {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-text-muted);
+}
+
+footer > div {
+  height: 28px;
+  margin-top: 100px;
+  margin-bottom: 77px;
+  text-align: center;
+}
+
+main {
+  /* max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; */
+  padding: 0px 180px
+}
+
+/*
+ * Стили для компонента поиска с иконкой
+ *
+ * search label:
+ *   - position: relative - устанавливает относительное позиционирование,
+ *     чтобы псевдоэлемент :before мог позиционироваться относительно label
+ *
+ * search label:before:
+ *   - content: "" - создает пустой псевдоэлемент, необходимый для отображения
+ *   - position: absolute - абсолютное позиционирование относительно родителя (label)
+ *   - left: 10px - отступ слева от края label
+ *   - top: 0; bottom: 0 - растягивает элемент по всей высоте родителя
+ *   - width: 20px - фиксированная ширина для иконки
+ *   - background: url(...) - встроенная SVG-иконка лупы в формате data URI
+ *     - center / contain - центрирование и масштабирование иконки
+ *     - no-repeat - предотвращает повторение фона
+ *
+ * search input:
+ *   - padding: 17px 18px - внутренние отступы для поля ввода
+ *     (левый отступ должен учитывать место для иконки)
+ *
+ * Примечание: для корректного отображения иконки слева от текста,
+ * может потребоваться увеличить padding-left у input
+ */
+/* Попытка установить значок поиска (не удалось выровнять расстояния как на макете) */
+search label {
+  position: relative;
+}
+
+search label:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.1" clip-path="url(%23clip0_2_4373)"><path d="M6.41667 11.0833C8.994 11.0833 11.0833 8.994 11.0833 6.41667C11.0833 3.83934 8.994 1.75 6.41667 1.75C3.83934 1.75 1.75 3.83934 1.75 6.41667C1.75 8.994 3.83934 11.0833 6.41667 11.0833Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.25 12.25L9.71249 9.71246" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_2_4373"><rect width="14" height="14" fill="white"/></clipPath></defs></svg>') center / contain no-repeat;
+}
+
+.home__categories {
+  display: flex;
+  gap: 52px;
+}
+
+search input {
+  padding: 17px 18px;
+}
+
+article {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+#search-input {
+  height: 40px;
+  background-color: rgba(31, 41, 55, 0.6);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  padding-left: 49px;
+}
+
+#search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #3B82F6;
+  color: #FFFFFF;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background-color: #4B5563;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  line-height: 35px;
+  box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.15);
+}
+
+.blog-category {
+  display: flex;
+  justify-content: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-text-muted);
+
+  height: 16px;
+  margin-top: 69px;
+  display: flex;
+  gap: 12px;
+}
+
+.article-owner {
+  padding-top: 30px;
+
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  align-items: center;
+
+  gap: 16px;
+  /* height: 53px; */
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 24px 0;
+  }
+
+  nav ul {
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .article-introduction img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home__categories {
+    display: none;
+  }
+
+  nav > a {
+    padding: 0;
+  }
+
+  main,
+  header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .article-introduction img {
+    height: 220px;
+  }
+}
+
+.article__pic {
+  /* Запрещает flex-элементу уменьшаться в размере, если во flex-контейнере не хватает места */
+  flex-shrink: 0;
+}
+
+.article-owner img {
+  /* Нужно для равномерного круга аватарки */
+  width: 53px;
+  height: 53px;
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.article__info {
+  max-width: 214px;
+}
+
+.article__author {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.article__role {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-text-muted);
+}
+
+.article-introduction img {
+  padding-top: 30px;
+  display: block;
+  margin: 0 auto;
+
+  width: 100%;
+  height: 594px;
+  object-fit: cover;
+  max-width: 100%;
+
+  margin: 28px auto 69px;
+  border-radius: 5px;
+}
+
+.article-introduction {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+
+  max-width: 896px;
+}
+
+.article-introduction p {
+
+  max-width: 708px;
+  margin: 0 auto;
+}
+
+.article-text {
+  margin-top: 28px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+
+  max-width: 708px;
+  margin: 28px auto 0;
+}
+
+.article-text > p:first-of-type {
+  margin-bottom: 28px;
+}
+
+.article-text span {
+  /* Нужно чтобы буквы пересекались подчёркиванием */
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
