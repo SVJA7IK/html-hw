@@ -207,10 +207,11 @@ article {
 
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  align-items: center;
 
   gap: 16px;
-  height: 53px;
+  /* height: 53px; */
 }
 
 @media (max-width: 768px) {
@@ -268,6 +269,10 @@ article {
   border-radius: 50%;
 }
 
+.article__info {
+  max-width: 214px;
+}
+
 .article__author {
   font-weight: 400;
   font-size: 16px;
@@ -275,12 +280,12 @@ article {
 }
 
 .article__role {
-  display: inline-block;
+  display: block;
   width: 100%;
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-muted);
 }
 
 .article-introduction img {
