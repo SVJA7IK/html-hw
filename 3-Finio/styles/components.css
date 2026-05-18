@@ -1,0 +1,126 @@
+/* Section */
+
+.section-header {
+  display: grid;
+  grid-template-columns: repeat(1fr, 2);
+  gap: 24px;
+  padding: 48px 24px 0;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--color-section-title);
+}
+
+.section-description {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--color-section-description);
+}
+
+@media (max-width: 790px) {
+  .section-title {
+    text-align: start;
+    font-size: 36px;
+  }
+  .section-description {
+    text-align: start;
+  }
+}
+
+/* Cards */
+
+.cards__item {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 32px 0 rgba(78, 93, 124, 0.16);
+}
+
+.cards__item--primary {
+  background-color: #357EFE;
+}
+
+.cards__discount {
+  border-radius: 8px;
+  padding: 4px 16px;
+  background: #1abc9c;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  color: #fff;
+}
+
+.cards__discount-number {
+  font-weight: 800;
+}
+
+.cards__title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 120%;
+  color: #000;
+}
+
+.cards__title--primary {
+  color: #FFFFFF;
+}
+
+.cards__description {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  color: rgba(78, 93, 124, 0.5);
+}
+
+.cards__description--primary {
+  color: rgba(255, 255, 255, 0.6);;
+}
+
+.cards__text {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 120%;
+  color: #4e5d7c;
+
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(78, 93, 124, 0.08);
+}
+
+.cards__text--primary {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+.cards__badge {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 120%;
+  color: #fff;
+  border-radius: 8px;
+  background: #ffc736;
+  text-align: center;
+}
+
+.cards__btn {
+  display: block;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 140%;
+  border-radius: 47px;
+  padding: 12px 63px;
+  text-align: center;
+  background-color: gray;
+  white-space: nowrap;
+  background-color: #357efe;
+  color: #fff;
+}
+
+.cards__btn--primary {
+  background-color: #fff;
+  color: #357efe;
+}
