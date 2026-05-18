@@ -1,0 +1,102 @@
+
+.tariffs__cards {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 24px;
+  padding: 40px 20px;
+  justify-content: center;
+}
+
+.tariffs__item {
+  padding: 48px 40px;
+
+  display: grid;
+  max-width: 369px;
+  grid-template-rows:
+    [discount-start]       29px
+    [discount-end]         16px
+    [title-start]       auto
+    [title-end]         16px
+    [desc-start]        auto
+    [desc-end]          50px
+    [terms-start]       auto
+    [terms-end]         40px
+    [button-start]      auto
+    [button-end];
+}
+
+.tariffs__item--primary {
+  grid-template-rows:
+    [discount-start]       29px
+    [discount-end]         16px
+    [title-start]       auto
+    [title-end]         16px
+    [desc-start]        auto
+    [desc-end]          32px
+    [terms-start]       auto
+    [terms-end]         34px
+    [button-start]      auto
+    [button-end];
+}
+
+
+.tariffs__discount {
+  grid-area: discount;
+  justify-self: start;
+}
+
+.tariffs__title {
+  grid-area: title;
+}
+
+.tariffs__description {
+  grid-area: desc;
+}
+
+.tariffs__terms {
+  grid-area: terms;
+}
+
+.tariffs__btn {
+  grid-area: button;
+}
+
+.tariffs__terms {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 33px;
+}
+
+.tariffs__value {
+  /* Магия: div исчезает как коробка, но оставляет элементы внутри */
+  display: contents;
+}
+
+.cards__badge {
+  padding: 8px 16px;
+  margin-left: -16px;
+  align-self: center;
+  justify-self: start;
+}
+
+.tariffs__value:last-child .cards__text {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+@media (max-width: 1200px) {
+  .tariffs__cards {
+    grid-template-columns: repeat(2, auto);
+    row-gap: 24px;
+  }
+}
+
+@media (max-width: 790px) {
+  .tariffs__cards {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .tariffs__item {
+    padding: 48px 24px;
+  }
+}
